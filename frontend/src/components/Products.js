@@ -15,6 +15,7 @@ const Products = ({product}) => {
           <img
             src={product.image}
             className=" "
+            alt="none"
             style={{ width: "10rem", height: "300px", objectFit: "contain" }}
           />
           <h3>{product.productname}</h3>
