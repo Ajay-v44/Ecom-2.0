@@ -9,7 +9,7 @@ const Products = ({product}) => {
       <Link to={`/product/${product._id}`}>
       <Card
         className="card  text-white bg-primary mb-3  rounded-4"
-        style={{ width: "30rem" }}
+        style={{ width: "40rem" }}
       >
         <Col key={product._id} sm={12} lg={4} xl={3} md={6} className="m-3">
           <img
