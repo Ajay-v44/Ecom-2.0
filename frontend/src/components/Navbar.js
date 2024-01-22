@@ -38,15 +38,15 @@ const NavBar = () => {
                   Features
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
+              <li>
+                <LinkContainer to="/cart" className="nav-item">
+                  <Nav.Link className="nav-link">Cart</Nav.Link>
+                </LinkContainer>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About
-                </a>
+              <li>
+                <LinkContainer to="/signup" className="nav-item">
+                  <Nav.Link className="nav-link">SignUp</Nav.Link>
+                </LinkContainer>
               </li>
               <li>
                 <LinkContainer to="/login" className="nav-item">
