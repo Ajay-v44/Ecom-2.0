@@ -28,7 +28,7 @@ export const productsDetailReducer = (state = { product: [] }, actions) => {
       return { loading: true, ...state };
     case PRODUCT_DETAILS_SUCCESS:
       return { loading: false, product: actions.payload };
-    case PRODUCT_LIST_FAILURE:
+    case PRODUCT_DETAILS_FAILURE:
       return { loading: false, error: actions.payload };
     default:
         return state

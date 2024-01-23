@@ -4,6 +4,7 @@ import Rating from "../Rating";
 import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../../actions/productActions";
 import { useParams } from "react-router";
+
 const Productscreen = ({ params }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -12,10 +13,10 @@ const Productscreen = ({ params }) => {
 
   useEffect(() => {
     dispatch(listProductDetails(id));
-  },(dispatch,params));
-
+  }, [dispatch, id]);
+  
   if (loading) {
-    return <p>Loading...</p>;
+    return <h2>Loading.....</h2>;
   }
 
   if (!product) {

@@ -1,5 +1,5 @@
 import React from "react";
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./components/Footer";
 import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar";
@@ -31,6 +31,7 @@ const App = () => {
           <Route exact path="/product/:id" element={<Productscreen/>}></Route>
         </Routes>
       </Router>
+      <Footer/>
     </>
   );
 };

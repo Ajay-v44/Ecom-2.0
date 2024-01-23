@@ -5,6 +5,10 @@ import { Row } from "react-bootstrap";
 import Products from "../Products";
 import { listProducts } from "../../actions/productActions";
 import { useDispatch,useSelector } from "react-redux";
+import Loader from "../Loader";
+import Message from "../Message";
+
+
 const Homescreen = () => {
   const dispatch=useDispatch()
   const productsList=useSelector((state)=>state.productsList);
@@ -19,8 +23,11 @@ const Homescreen = () => {
       <h1>Products</h1>
 {
   loading ?
- ( <h2>Loading ...</h2>):error?(
-  <h3>{error}</h3>
+ ( <h2><Loader/></h2>):error?(
+  <>
+ <Message message="error">
+</Message>
+</>
  ):(
 
   <Row className="d-flex justify-content-center">
