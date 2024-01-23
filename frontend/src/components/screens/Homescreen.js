@@ -1,6 +1,5 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { Row } from "react-bootstrap";
 import Products from "../Products";
@@ -25,7 +24,7 @@ const Homescreen = () => {
  ):(
 
   <Row className="d-flex justify-content-center">
-  {products.map((product) => (
+  {products ?.map((product) => (
     <Products key={product.id} product={product} />
   ))}
 </Row>

@@ -1,27 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import Rating from "../Rating";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { listProductDetails } from "../../actions/productActions";
 import { useParams } from "react-router";
-
-const Productscreen = ({params}) => {
+const Productscreen = ({ params }) => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const productDetails = useSelector((state) => state.productDetails);
+  const { error, loading, product } = productDetails;
 
   useEffect(() => {
-    async function fetchProduct() {
-      try {
-        const { data } = await axios.get(`product/${id}`);
-        setProduct(data);
-        setLoading(false);
-      } catch (err) {
-        console.error("Error fetching product:", err);
-        setLoading(false);
-      }
-    }
-    fetchProduct();
-  }, [id]);
+    dispatch(listProductDetails(id));
+  },(dispatch,params));
 
   if (loading) {
     return <p>Loading...</p>;
@@ -57,7 +48,9 @@ const Productscreen = ({params}) => {
               text={`${product.numReviews} reviews`}
               color={"#f8e825"}
             />
-            <button type="button" className="btn btn-outline-secondary">Add To Cart</button>
+            <button type="button" className="btn btn-outline-secondary">
+              Add To Cart
+            </button>
           </Col>
         </Card>
       </Row>
