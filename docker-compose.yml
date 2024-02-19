@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend  # Path to the React project
+    ports:
+      - "3000:3000"
+
+  backend:
+    build:
+      context: ./backend  # Path to the Django project
+    ports:
+      - "8000:8000"

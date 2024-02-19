@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import Rating from "../Rating";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +9,7 @@ const Productscreen = ({ params }) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
-  const { error, loading, product } = productDetails;
+  const {  loading, product } = productDetails;
 
   useEffect(() => {
     dispatch(listProductDetails(id));
